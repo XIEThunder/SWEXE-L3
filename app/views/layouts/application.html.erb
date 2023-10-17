@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
+    <meta charset="UTF-8"> <!-- 文字コード指定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SWEXEL3</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- スタイルシートのリンクを追加 -->
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+      <div id="header">
+        <nav>
+          <ul>
+            <li><a href="#">ツイート</a></li>
+            <li><a href="#">ツイートと返信</a></li>
+            <li><a href="#">メディア</a></li>
+            <li><a href="#">いいね</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="sub">
+        <ul>
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">話題を検索</a></li>
+          <li><a href="#">通知</a></li>
+          <li><a href="#">メッセージ</a></li>
+          <li><a href="#">ブックマーク</a></li>
+          <li><a href="#">リスト</a></li>
+          <li><a href="#"><%= link_to 'ツイートする', 'tweets/new' %></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
   </body>
 </html>

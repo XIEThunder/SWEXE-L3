@@ -1,15 +1,83 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f8fa;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#header {
+  background-color: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  padding: 0;
+  width: 35%;
+  position: fixed;
+  left: 550px;
+  font-size: 120%;
+  top: 0; /* Add this line to position the header at the top */
+}
+
+#sub {
+  background-color: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  padding: 10px;
+  width: 15%;
+  position: fixed;
+  top: 0;
+  left: 100px;
+  z-index: 0;
+}
+
+#content {
+  background-color: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  padding: 10px;
+  width: 35%;
+  position: fixed;
+  top: 30px; /* Adjust the top value to position it below the header */
+  left: 550px;
+  margin-top: 0; /* Remove the margin-top */
+}
+
+ul li {
+  margin-left: 1em;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  display: table-cell;
+  vertical-align: middle;
+  border-right: 1px solid #fff;
+  word-wrap: break-word;
+  height: 100%;
+}
+
+nav li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #1da1f2;
+}
+
+nav li a:hover {
+  background-color: #e1e8ed;
+  border-radius: 5px;
+  color: #1da1f2;
+}
